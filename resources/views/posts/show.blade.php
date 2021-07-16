@@ -24,11 +24,6 @@
       <p class="mb-4 text-grey-dark text-sm">
       {{$post->description}}
        </p>
-      
-       <!-- button -->
-      <!-- <button class="py-3 px-6 bg-purple hover:bg-purple-light text-white font-bold rounded-full mt-1 mb-2">
-        Hey, click me.
-       </button> -->
        
     </div>
 
