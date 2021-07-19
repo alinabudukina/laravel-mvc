@@ -28,12 +28,8 @@ require __DIR__.'/auth.php';
 
 Route::resource('posts', PostController::class);
 Route::resource('users', UserController::class);
-Route::resource('register', RegisterController::class);
-Route::get('register', [RegisterController::class, 'create']);
-
 
 Route::get('/posts', function () {
     return 'ici on doit voir tous les postes';
 });
 
-//Route::get('register', [RegisterController::class, 'create']);

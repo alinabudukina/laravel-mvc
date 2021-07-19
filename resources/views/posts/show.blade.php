@@ -21,7 +21,7 @@
     <!-- card-content -->
      <div class="px-6 py-4">
       <a href="/users" h2 class="mb-2 font-black">{{$post->user->name}}</a></h2>
-      <p class="mb-4 text-grey-dark text-sm">
+      <p class="mb-4 text-grey-dark text-sm mt-8">
       {{$post->description}}
        </p>
        
