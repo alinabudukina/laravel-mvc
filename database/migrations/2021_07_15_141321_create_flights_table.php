@@ -14,10 +14,10 @@ class CreateFlightsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
+            $table->BigIncrements('id');
             $table->text('description');
             $table->string('img_url');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('user_id')->index();
             $table->timestamps();
         });
     }

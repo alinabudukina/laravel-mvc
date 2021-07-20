@@ -22,9 +22,14 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function _construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
