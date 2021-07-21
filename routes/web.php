@@ -29,9 +29,6 @@ require __DIR__.'/auth.php';
 Route::resource('posts', PostController::class);
 Route::resource('users', UserController::class);
 
-// Route::get('/posts', function () {
-//     return 'ici on doit voir tous les postes';
-// });
 
 Route::get('posts/create', 'PostController@create')->name('posts.create');
 Route::post('posts', 'PostController@store')->name('posts.store');

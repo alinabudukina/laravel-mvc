@@ -38,11 +38,24 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
+    // ICI
+    public function store()
+    {
+        $data = request()->validate([
+            'description' => 'required|string|max:255',
+            'img_url' => 'required|image',
+        ]);
+
+        $imagePath = request('img_url')->store('uploads', 'public');
+
+        // pour recoupere l'utilisateur connecte
+
+        auth()->user()->posts()->create([
+            'description' => $data['description'],
+            'img_url' => $imagePath
+        ]);
+    }
     /**
      * Display the specified resource.
      *

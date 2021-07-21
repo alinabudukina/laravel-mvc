@@ -15,8 +15,10 @@
 
   <!-- card container -->
   <div class="max-w-lg shadow-lg rounded overflow-hidden m-4 sm:flex">
-    <div class="h-48 sm:h-full:w-64 md:w-64 flex-none bg-cover bg-center rounded rounded-t sm:rounded sm:rounded-l text-center overflow-hidden" style="background-image: url('https://unsplash.it/804/800')">
-    </div>
+    <div class="h-48 sm:h-full:w-64 md:w-64 flex-none bg-cover bg-center rounded rounded-t sm:rounded sm:rounded-l text-center overflow-hidden">
+    <img src="\\{{$post->img_url}}" alt="">  
+  </div>
+    
     
     <!-- card-content -->
      <div class="px-6 py-4">
