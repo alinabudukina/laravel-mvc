@@ -14,7 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+        
+        return view('dashboard', ['posts'=>$posts]);
     }
 
     /**
@@ -46,13 +48,13 @@ class PostController extends Controller
             'img_url' => 'required|image',
         ]);
 
-        // request pour recouperer
+        // request pour recuperer
         $imagePath = request('img_url')->store('uploads', 'public');
 
-        // pour recouperer l'utilisateur connecte
+        // pour recuperer l'utilisateur connecte
 
         auth()->user()->posts()->create([
-            // pour recouperer manuellement les donnees remplis par utilisateur
+            // pour recuperer manuellement les donnees remplis par utilisateur
             'description' => $data['description'],
             'img_url' => $imagePath
             // apres dans post.php on creer un champ protege, mais pourquoi?
