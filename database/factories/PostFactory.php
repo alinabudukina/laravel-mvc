@@ -23,7 +23,7 @@ class PostFactory extends Factory
     {
         return [
         'description' => "Mon chat est trop mignon",
-        'img_url' => $this->faker->imageUrl(640, 480, 'cats'),
+        'img_url' => "uploads/0NQtcj8HNAxQnFw7RDjtK2DSRzGBPV8D8HcaPSj4.jpg",
         'user_id' => 1
         ];
     }

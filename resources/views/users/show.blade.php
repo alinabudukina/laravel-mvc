@@ -20,6 +20,7 @@
   <div class="text-center mt-2">
     <h2 class="font-semibold">{{$user->name}}</h2>
     <p class="text-gray-500">{{$user->biography}}</p>
+    <p class="text-gray-500">{{$user->email}}</p>
   </div>
   <div class="p-4 border-t mx-8 mt-2">
     <button class="w-1/2 block mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2">Follow</button>

@@ -32,6 +32,13 @@
                                 required autocomplete="current-password" />
             </div>
 
+            <!-- Bio -->
+            <div>
+                <x-label for="biography" :value="__('Biography')" />
+
+                <x-input id="biography" class="block mt-1 w-full" type="text" name="biography" :value="old('biography')" required autofocus />
+            </div>
+
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">

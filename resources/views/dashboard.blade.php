@@ -25,20 +25,34 @@
           </button>
         </div>
         
-      <div id="nav-content" class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0 md:text-right">
-        <div class="text-sm lg:flex-grow">
-            <a href="{{ route('posts.create') }}" class="block mt-1 lg:inline-block lg:mt-0 text-dark-200 hover:text-teal-800 mr-4m"> Créer un post </a>
-            <a href="#responsive-header" class="block mt-1 lg:inline-block lg:mt-0 text-dark-200 hover:text-teal-800 mr-4">Sign In</a>
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-dark-200 hover:text-teal-800 mr-4">Subscribe</a>
-            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-dark-200 hover:text-teal-800 mr-4">Contact</a>
-         </div>
-       </div>
+
         
+       <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form>
+
+        <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <x-dropdown-link href="{{ route('posts.create') }}" class="dropdown-item"> Créer un post </x-dropdown-link>
+                    <x-dropdown-link :href="route('posts.create')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-dropdown-link>
+
+                </form>
     </nav>
           
           <!-- Features -->
           <section class="container mx-auto px-6 p-10">
             <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Listes des posts</h2>
+         
             @foreach($posts as $post)
             <div class="flex items-center flex-wrap mb-20">
               <div class="w-full md:w-1/2 pl-10">
@@ -46,7 +60,7 @@
                 <p class="text-gray-600 mb-8">We'll never get it out now. So certain are you. Always with you it cannot be done. Hear you nothing that I say? Master, moving stones around is one thing. This is totally different. No! No different!</p>
               </div>
               <div class="w-full md:w-1/2">
-                <img class="rounded-lg"  src="picture.jpg" />
+              <img class="rounded-lg"src="{{ asset('storage/' . $post->img_url) }}" />
               </div>
             </div>
               @endforeach
