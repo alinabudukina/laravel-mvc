@@ -16,7 +16,7 @@ class CreateFlightsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->BigIncrements('id');
             $table->text('description');
-            $table->image('img_url');
+            $table->string('img_url');
             $table->unsignedBigInteger('user_id')->index();
             $table->timestamps();
         });

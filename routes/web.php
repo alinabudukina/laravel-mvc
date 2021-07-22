@@ -26,9 +26,9 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('posts', PostController::class);
-Route::resource('users', UserController::class);
+// Route::resource('posts', PostController::class);
+Route::resource('posts', 'PostController');
+Route::resource('users', 'UserController');
 
-
-Route::get('posts/create', 'PostController@create')->name('posts.create');
-Route::post('posts', 'PostController@store')->name('posts.store');
+// Route::get('posts/create', 'PostController@create')->name('posts.create');
+// Route::post('posts', 'PostController@store')->name('posts.store');

@@ -39,7 +39,6 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // ICI
     public function store()
     {
         $data = request()->validate([
@@ -47,14 +46,19 @@ class PostController extends Controller
             'img_url' => 'required|image',
         ]);
 
+        // request pour recouperer
         $imagePath = request('img_url')->store('uploads', 'public');
 
-        // pour recoupere l'utilisateur connecte
+        // pour recouperer l'utilisateur connecte
 
         auth()->user()->posts()->create([
+            // pour recouperer manuellement les donnees remplis par utilisateur
             'description' => $data['description'],
             'img_url' => $imagePath
+            // apres dans post.php on creer un champ protege, mais pourquoi?
         ]);
+
+    return redirect()->route('users.show', ['user' => auth()->user()]);
     }
     /**
      * Display the specified resource.
