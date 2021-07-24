@@ -19,7 +19,8 @@
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
             <form class="bg-white" method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
-            @csrf    
+            @csrf
+              
             <div class="mb-4">
                     <label class="block mb-2 text-sm font-bold" for="username">
                         Text

@@ -24,29 +24,23 @@
             </svg>
           </button>
         </div>
-        
 
-        
-       <form method="POST" action="{{ route('logout') }}">
+        <div id="nav-content" class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0 md:text-right">
+        <div class="text-sm lg:flex-grow">
+                    <form method="POST" action="{{ route('logout') }}">
                     @csrf
-
-                    <x-responsive-nav-link :href="route('logout')"
+                        <a href="{{ route('posts.create') }}" class="block mt-1 lg:inline-block lg:mt-0 text-dark-200 hover:text-teal-800 mr-4">Créer un post</a>
+                        <!-- <a href="route('posts.create')"
                             onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
+                                        this.closest('form').submit();" class="block mt-4 lg:inline-block lg:mt-0 text-dark-200 hover:text-teal-800 mr-4">Log Out</a> -->
+         </div>
+       </div>
 
-        <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <x-dropdown-link href="{{ route('posts.create') }}" class="dropdown-item"> Créer un post </x-dropdown-link>
-                    <x-dropdown-link :href="route('posts.create')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
+        
+                    <x-dropdown-link :href="{{ route('logout') }}">
                         {{ __('Log Out') }}
                     </x-dropdown-link>
 
-                </form>
     </nav>
           
           <!-- Features -->
@@ -57,7 +51,7 @@
             <div class="flex items-center flex-wrap mb-20">
               <div class="w-full md:w-1/2 pl-10">
                 <h4 class="text-3xl text-gray-800 font-bold mb-3">{{$post->description}}</h4>
-                <p class="text-gray-600 mb-8">We'll never get it out now. So certain are you. Always with you it cannot be done. Hear you nothing that I say? Master, moving stones around is one thing. This is totally different. No! No different!</p>
+                <p class="text-gray-600 mb-8">{{$post->description}}</p>
               </div>
               <div class="w-full md:w-1/2">
               <img class="rounded-lg"src="{{ asset('storage/' . $post->img_url) }}" />
